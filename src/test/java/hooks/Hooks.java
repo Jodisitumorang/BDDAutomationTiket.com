@@ -15,12 +15,13 @@ public class Hooks {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         //fungsi untuk setup chrome agar bisa terbuka
         WebDriverManager.chromedriver().setup();
-        ChromeOptions co = new ChromeOptions();
-        co.addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("user-data-dir=C:\\Users\\Adrinant\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 12");
         //inisiasi library selenium
-        driver = new ChromeDriver(co);
+        driver = new ChromeDriver(options);
 
-        String appUrl = "https://www.saucedemo.com/";
+        String appUrl = "https://www.tiket.com/";
         driver.get(appUrl);//fungsi untuk ngebuka link html
         driver.manage().window().maximize();//fungsi untuk memaximize browser
     }
