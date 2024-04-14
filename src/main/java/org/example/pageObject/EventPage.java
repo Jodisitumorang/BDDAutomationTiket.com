@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class EventPage {
     public static WebDriver webDriver;
@@ -43,6 +44,11 @@ public class EventPage {
     private WebElement olahragaBtn;
     @FindBy(xpath = "//span[.='Pameran']")
     private WebElement pameranBtn;
+
+    @FindBy(xpath = "//button[.='Urutkan']")
+    private WebElement sortButton;
+    @FindBy(xpath = "//button[@class='Modal_modal_close__Y2jEm']")
+    private WebElement xSortButton;
 
     public boolean verifyHome() {
         boolean a = tiketLogo.isDisplayed();
@@ -99,6 +105,34 @@ public class EventPage {
             // Element not found, return empty string
             return "";
         }
+    }
+
+    private boolean isPopUpOpen() {
+        return xSortButton.isDisplayed();
+    }
+
+    public void selectSortBy(String sortBy) throws InterruptedException {
+        sortButton.click();
+        Thread.sleep(2000);
+        String xpath = "//div[.='" + sortBy + "']";
+
+        try {
+            WebElement sortOptions = webDriver.findElement(By.xpath(xpath));
+            sortOptions.click();
+
+            // Check if the pop-up is still open (consider using a more robust method)
+            if (isPopUpOpen()) {
+                // Click the X button to close the pop-up if necessary
+                String closeButtonXpath = "//button[@class='Modal_modal_close__Y2jEm']"; // Assuming the X button's XPath
+                WebElement closeButton = webDriver.findElement(By.xpath(closeButtonXpath));
+                closeButton.click();
+            }
+
+        } catch (NoSuchElementException e) {
+            // Handle potential exception if the sort option isn't found
+            System.out.println("Sort option '" + sortBy + "' not found.");
+        }
+
     }
 
 }

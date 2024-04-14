@@ -53,4 +53,9 @@ public class EventSteps {
         String actualTicketText = eventPage.getTicketResult(expectedTicket);
         Assert.assertThat(actualTicketText, CoreMatchers.containsString(expectedTicket));
     }
+
+    @When("User sort event by {string}")
+    public void userSortEventBy(String sortBy) throws InterruptedException {
+        eventPage.selectSortBy(sortBy);
+    }
 }

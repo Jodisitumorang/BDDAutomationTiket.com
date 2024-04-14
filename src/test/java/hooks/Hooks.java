@@ -11,7 +11,7 @@ public class Hooks {
     public static WebDriver driver;
 
     @Before
-    public void openBrowser(){
+    public void openBrowser() {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         //fungsi untuk setup chrome agar bisa terbuka
         WebDriverManager.chromedriver().setup();
@@ -27,7 +27,7 @@ public class Hooks {
     }
 
     @After
-    public void closeBrowser(){
+    public void closeBrowser() {
         driver.quit();
     }
 

@@ -1,0 +1,48 @@
+No,Features,Scenario / Scenario Outline,Background,Steps,Data,Type,Status,Remark
+1,Homepage,As a user i can go to event ticket category by event button,Given User is Already in https://www.tiket.com/,"When User click Event category button
+Then User redirected to Event product page",,( + ),PASS,
+2,Event,"Filter event ticket by ""Seminar""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Seminar""
+Then User should see ""Seminar"" Event only",,( + ),PASS,
+3,Event,"Filter event ticket by ""Konser""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Konser""
+Then User should see ""Konser"" Event only",,( + ),PASS,
+4,Event,"Filter event ticket by ""Horor""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Horor""
+Then User should see ""Horor"" Event only",,( + ),PASS,
+5,Event,"Filter event ticket by ""Komedi""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Komedi""
+Then User should see ""Komedi"" Event only",,( + ),PASS,
+6,Event,"Filter event ticket by ""Olahraga""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Olahraga""
+Then User should see ""Olahraga"" Event only",,( + ),PASS,
+7,Event,"Filter event ticket by ""Pameran""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User filter Event ticket by ""Pameran""
+Then User should see ""Pameran"" Event only",,( + ),PASS,
+8,Event,User can login via login button in Event category page,Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User click Log in button
+Then User redirected to login page
+When User input email to email field
+And User click log in button
+Then User should see password field
+When User input password to password field
+And User click log in
+Then User redirected to Event product page",,( + ),PASS,
+9,Event,"Sort event ticket by ""Terdekat""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Terdekat""
+Then User should see Event Terdekat",,( + ),PASS,
+10,Event,"Sort event ticket by ""Terpopuler""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Terpopuler""
+Then User should see Event Terpopuler",,( + ),PASS,
+11,Event,"Sort event ticket by ""Harga Terendah""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Harga Terendah""
+Then User should see Event Harga Terendah",,( + ),PASS,
+12,Event,"Sort event ticket by ""Harga Tertinggi""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Harga Tertinggi""
+Then User should see Event Harga Tertinggi",,( + ),PASS,
+13,Event,"Sort event ticket by ""Rating Tertinggi""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Rating Tertinggi""
+Then User should see Event Rating Tertinggi",,( + ),PASS,
+14,Event,"Sort event ticket by ""Baru Ditambahkan""",Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Baru Ditambahkan""
+Then User should see Event Baru Ditambahkan",,( + ),PASS,
+15,Event,User can buy one of the event ticket,Given User is Already in https://www.tiket.com/to-do/search?productCategoryCodes=EVENT,"When User sort Event ticket by ""Terdekat""
+Then User should see Event Terdekat
+When User click Pandora Nightmare Festival 2024
+Then User redirected to Ticket Detail Page
+When User click log in
+Then User redirected to login page
+When User input email to email field
+And User click log in button
+Then User should see password field
+When User input password to password field
+And User click log in
+Then User redirected back to Ticket Detail Page
+",,( + ),PASS,
